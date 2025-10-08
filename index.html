@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casos de Sucesso | Prospera Rio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --azul-principal: #092040;
+      --azul-secundaria: #00B7D7;
+      --amarelo-acento: #ECC203;
+      --cinza-neutro: #EFF1F3;
+      --azul-escuro: #021738;
+      --branco: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--cinza-neutro);
+      color: var(--azul-escuro);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-secundaria) 100%);
+      color: var(--branco);
+      padding: 48px 32px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 40px rgba(9, 32, 64, 0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .location-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--amarelo-acento);
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .intro-card {
+      background: linear-gradient(135deg, #FFF9E6 0%, var(--branco) 100%);
+      padding: 28px;
+      border-radius: 12px;
+      margin: 24px 0 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 6px solid var(--amarelo-acento);
+    }
+
+    .intro-card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--azul-principal);
+      margin-bottom: 10px;
+    }
+
+    .intro-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .filtros {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filtro-btn {
+      padding: 10px 18px;
+      background: var(--branco);
+      border: 2px solid var(--azul-secundaria);
+      border-radius: 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      color: var(--azul-principal);
+    }
+
+    .filtro-btn:hover,
+    .filtro-btn.active {
+      background: var(--azul-secundaria);
+      color: var(--branco);
+      transform: translateY(-1px);
+    }
+
+    .casos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .caso-card {
+      background: var(--branco);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.25s;
+    }
+
+    .caso-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+    }
+
+    .caso-card.hidden {
+      display: none;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .caso-content {
+      padding: 20px;
+    }
+
+    .caso-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    .caso-info h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--azul-principal);
+      margin-bottom: 4px;
+    }
+
+    .caso-meta {
+      font-size: 0.9rem;
+      color: var(--azul-secundaria);
+      font-weight: 600;
+    }
+
+    .caso-tag {
+      background: var(--amarelo-acento);
+      color: var(--azul-principal);
+      padding: 6px 12px;
+      border-radius: 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .caso-descricao {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      color: var(--azul-escuro);
+    }
+
+    .licoes {
+      background: #F0F9FC;
+      padding: 16px;
+      border-radius: 10px;
+      border-left: 4px solid var(--azul-secundaria);
+    }
+
+    .licoes h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul-principal);
+      margin-bottom: 10px;
+    }
+
+    .licoes ul {
+      list-style: none;
+    }
+
+    .licoes li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .licoes li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--azul-secundaria);
+      font-weight: 700;
+    }
+
+    .cta-section {
+      background: var(--azul-principal);
+      color: var(--branco);
+      padding: 40px 28px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 32px;
+      box-shadow: 0 10px 40px rgba(9, 32, 64, 0.3);
+    }
+
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--amarelo-acento);
+      color: var(--azul-principal);
+    }
+
+    .btn-primary:hover {
+      background: #d4a803;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--branco);
+      border: 2px solid var(--branco);
+    }
+
+    .btn-secondary:hover {
+      background: var(--branco);
+      color: var(--azul-principal);
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<div class="logo-container">
+<img alt="Prospera Rio" class="logo" src="https://lh3.googleusercontent.com/d/1x5sNkC9vd7CI78y0xdkWvgoadxPEMcIf=w800"/>
+<div class="location-text">MARÉ · JACAREZINHO</div>
+</div>
+<h1>Casos de Sucesso</h1>
+<p>Jovens empreendedores que transformaram ideias em negócios de alto impacto.</p>
+</header>
+<section class="intro-card">
+<h2>Inspire-se com histórias reais</h2>
+<p>Estes jovens começaram com pouco e construíram negócios relevantes. As trajetórias mostram caminhos práticos para dar o primeiro passo com o que você tem hoje.</p>
+<p><strong>Assista, anote as lições e adapte para a sua realidade.</strong></p>
+</section>
+<nav class="filtros">
+<button class="filtro-btn active" data-categoria="todos">Todos</button>
+<button class="filtro-btn" data-categoria="digital">Digital</button>
+<button class="filtro-btn" data-categoria="produtos">Produtos</button>
+<button class="filtro-btn" data-categoria="servicos">Serviços</button>
+<button class="filtro-btn" data-categoria="social">Impacto Social</button>
+</nav>
+<section class="casos-grid">
+<!-- Victor Lazarte - Wildlife Studios -->
+<!-- Davi Braga -->
+<!-- Whindersson Nunes -->
+<!-- Bianca Andrade (Boca Rosa) -->
+<!-- Felipe Neto -->
+<!-- Camila Coelho -->
+<!-- Shark Tank - Jovens Empreendedores -->
+<!-- Mark Zuckerberg -->
+<!-- Kondzilla -->
+<!-- Brex -->
+<!-- Destemperados -->
+<!-- MC Livinho -->
+<!-- Bilionários Mais Jovens do Brasil -->
+<!-- Favela Holding -->
+<!-- Jovem 17 anos -->
+<!-- Paola Carosella -->
+<!-- Empreendedorismo Digital -->
+<article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/TLZ3_dooubk"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Whindersson Nunes</h3>
+<div class="caso-meta">YouTuber e Empreendedor • Piauí</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Do interior do Piauí para um dos maiores canais do YouTube Brasil. Construiu império digital com milhões de seguidores e diversificou para música, stand-up e investimentos.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Autenticidade como diferencial competitivo.</li>
+<li>Consistência na produção de conteúdo.</li>
+<li>Diversificação de fontes de receita.</li>
+<li>Conexão genuína com a audiência.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/pjQg7Z2_ews"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Felipe Neto</h3>
+<div class="caso-meta">YouTuber e Empresário • Rio de Janeiro</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Pioneiro do YouTube no Brasil, construiu um dos maiores canais do país. Expandiu para produtora, editora e se tornou uma das vozes mais influentes da internet brasileira.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Ser pioneiro em plataformas emergentes.</li>
+<li>Adaptar conteúdo às mudanças do mercado.</li>
+<li>Construir ecossistema de negócios.</li>
+<li>Usar influência para múltiplos propósitos.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/MGsalg2f9js"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Mark Zuckerberg</h3>
+<div class="caso-meta">Facebook/Meta • EUA</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Do dormitório de Harvard ao Facebook. Começou criando uma rede social simples para estudantes e transformou em uma das maiores empresas de tecnologia do mundo.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Começar simples e iterar rapidamente.</li>
+<li>Focar em resolver um problema real.</li>
+<li>Escalar mantendo a visão de longo prazo.</li>
+<li>Persistência diante de desafios legais e competitivos.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/3yd_eoMOvqk"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Kondzilla</h3>
+<div class="caso-meta">Konrad Dantas • São Paulo</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Começou filmando clipes com equipamento básico em periferias. Hoje o canal soma dezenas de milhões de inscritos e produções bilionárias em views.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Entrada enxuta, foco em consistência.</li>
+<li>Oportunidade em nichos subatendidos.</li>
+<li>Valorização de cultura e território.</li>
+<li>Escala pelo digital e parcerias.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/bt2qfjG5K1A"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Empreendedorismo Digital</h3>
+<div class="caso-meta">Caminhos práticos para começar</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Vendas por Instagram, conteúdo, dropshipping e infoprodutos. Porta de entrada acessível para validar ofertas e aprender mercado.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Baixa barreira de entrada.</li>
+<li>Testes rápidos e melhoria contínua.</li>
+<li>Funil simples e conversão.</li>
+<li>Construção de audiência.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/sNjd5H-fglA"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Virgínia Fonseca</h3>
+<div class="caso-meta">Forbes Under 30 • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Criadora de conteúdo, influencer, mãe e empreendedora, Virgínia Fonseca foi entrevistada no Podcast da Forbes Under 30, compartilhando sua trajetória de sucesso e o crescimento de seus negócios.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Construção de marca pessoal.</li>
+<li>Diversificação de atuação.</li>
+<li>Uso estratégico das redes sociais.</li>
+<li>Visão empreendedora.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/djpsCpMG-6w"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Jade Picon</h3>
+<div class="caso-meta">Forbes Under 30 • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Atriz, influenciadora e empreendedora, Jade Picon é destaque na lista Forbes Under 30. Neste vídeo, ela compartilha sua jornada, desde as redes sociais até o lançamento de suas próprias marcas.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Construção de marca pessoal.</li>
+<li>Diversificação de atuação.</li>
+<li>Uso estratégico das redes sociais.</li>
+<li>Visão empreendedora.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/vRjg0ELGldg"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Lucas Rangel</h3>
+<div class="caso-meta">Forbes • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Influenciador e empreendedor, Lucas Rangel construiu um império digital com milhões de seguidores. Neste vídeo, ele detalha sua trajetória e como transformou sua influência em negócios de sucesso, sendo reconhecido pela Forbes.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Construção de marca pessoal.</li>
+<li>Diversificação de atuação.</li>
+<li>Uso estratégico das redes sociais.</li>
+<li>Visão empreendedora.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/d0fD27ESFfw"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Caio Carneiro</h3>
+<div class="caso-meta">Empreendedor • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Caio Carneiro, autor e empreendedor, compartilha sua história de como conquistou seu primeiro milhão de dólares aos 25 anos. Um exemplo de disciplina e visão no mundo dos negócios.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Construção de marca pessoal.</li>
+<li>Diversificação de atuação.</li>
+<li>Uso estratégico das redes sociais.</li>
+<li>Visão empreendedora.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/B-hKiemb1r0"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Maísa Silva</h3>
+<div class="caso-meta">Atriz e Empresária • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">De atriz mirim a empresária de sucesso, Maísa Silva é um fenômeno do entretenimento e empreendedorismo. Este vídeo explora como ela construiu sua carreira e seus negócios, tornando-se uma figura influente no cenário brasileiro.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Construção de marca pessoal.</li>
+<li>Diversificação de atuação.</li>
+<li>Uso estratégico das redes sociais.</li>
+<li>Visão empreendedora.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/NghZkYkhCdc"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Eduardo Saverin</h3>
+<div class="caso-meta">Co-fundador do Facebook • Brasil/EUA</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">A história de Eduardo Saverin, co-fundador do Facebook, desde sua origem brasileira até se tornar um dos maiores investidores e empreendedores do mundo da tecnologia.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Visão de futuro e inovação.</li>
+<li>Construção de redes e parcerias.</li>
+<li>Adaptação e resiliência.</li>
+<li>Investimento estratégico em tecnologia.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="produtos digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/yqOBBlkm8wE"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Bianca Andrade</h3>
+<div class="caso-meta">Boca Rosa Company • São Paulo</div>
+</div>
+<span class="caso-tag">Produtos</span>
+</div>
+<p class="caso-descricao">De influenciadora digital a CEO de império de beleza. Criou a Boca Rosa Beauty, uma das marcas de cosméticos mais bem-sucedidas do Brasil, faturando milhões.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Transformar audiência em negócio escalável.</li>
+<li>Qualidade de produto como prioridade.</li>
+<li>Marca pessoal forte gera confiança.</li>
+<li>Inovação constante no mercado de beleza.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital produtos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/JKWf4-Z-GYk"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Camila Coelho</h3>
+<div class="caso-meta">Influenciadora e Empresária • Minas Gerais</div>
+</div>
+<span class="caso-tag">Produtos</span>
+</div>
+<p class="caso-descricao">De blogueira de moda a empresária global. Lançou sua própria linha de maquiagem e roupas, consolidando sua marca no cenário internacional.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Começar do zero e construir gradualmente.</li>
+<li>Expansão internacional estratégica.</li>
+<li>Profissionalismo na criação de conteúdo.</li>
+<li>Lançamento de marca própria no momento certo.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="produtos digital">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/rchKKjQKl4M"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Destemperados</h3>
+<div class="caso-meta">Canal de Culinária</div>
+</div>
+<span class="caso-tag">Produtos</span>
+</div>
+<p class="caso-descricao">De vídeos simples para livros, eventos ao vivo e linha de produtos próprios. Exemplo de conteúdo que vira plataforma de negócios.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Autenticidade e proximidade.</li>
+<li>Diversificação de receita.</li>
+<li>Comunidade como ativo.</li>
+<li>Marca pessoal consistente.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital produtos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/3NO01ShRytM"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>MC Livinho</h3>
+<div class="caso-meta">Oliver Santos • São Paulo</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Começou como MC na periferia e construiu carreira sólida no funk. Expandiu para negócios, lançando marcas e produtos, mostrando empreendedorismo além da música.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Start enxuto e autodidata.</li>
+<li>Uso estratégico de plataformas.</li>
+<li>Expansão para produtos físicos.</li>
+<li>Resiliência como vantagem.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="produtos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/fF-68oyN4I8"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Jovem de 17 Anos</h3>
+<div class="caso-meta">Empreendedora com Franquia</div>
+</div>
+<span class="caso-tag">Produtos</span>
+</div>
+<p class="caso-descricao">Maria Paula Baratto Colatto, jovem determinada que aos 17 anos empreendeu com franquia. Validação online, reinvestimento disciplinado e foco em execução.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Testar antes de escalar.</li>
+<li>Gestão de caixa com reinvestimento.</li>
+<li>Planejamento de estoque e mix.</li>
+<li>Determinação e foco em resultados.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital servicos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/n61vW_gxVAE"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Victor Lazarte</h3>
+<div class="caso-meta">Wildlife Studios • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">Fundou a Wildlife Studios, maior empresa de jogos da América Latina, com apenas US$ 100 de investimento inicial. Cresceu até avaliação de US$ 3,3 bilhões e hoje é General Partner na Benchmark, um dos fundos de VC mais prestigiados do mundo.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Começar enxuto e focar em métricas de viralidade.</li>
+<li>Retenção de usuários como chave do sucesso.</li>
+<li>Crescimento orgânico antes de investir em marketing.</li>
+<li>Transição de fundador para investidor estratégico.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital servicos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/hnjD8Uz6wRo"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Davi Braga</h3>
+<div class="caso-meta">Jovem Empreendedor • Brasil</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">De jovem empreendedor aos 13 anos a sócio de mais de 27 empresas. Reconhecido como Forbes Under 30 e vencedor do Prêmio Jovem Brasileiro. Referência para milhares de jovens no empreendedorismo.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Começar cedo e aprender fazendo.</li>
+<li>Construir portfólio de negócios diversificados.</li>
+<li>Educação empreendedora como missão.</li>
+<li>Persistência e visão de longo prazo.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="servicos produtos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/o6T7lrjeWLc"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Jovens no Shark Tank</h3>
+<div class="caso-meta">Empreendedores Brasileiros</div>
+</div>
+<span class="caso-tag">Serviços</span>
+</div>
+<p class="caso-descricao">Jovens empreendedores brasileiros apresentando seus negócios no Shark Tank Brasil. Histórias inspiradoras de quem começou cedo e buscou investimento para escalar.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Preparação é fundamental para pitch.</li>
+<li>Conhecer números do próprio negócio.</li>
+<li>Saber negociar e defender sua visão.</li>
+<li>Aprender com feedback de investidores.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital servicos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/IDLNo6GOaC4"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Brex — Unicórnio</h3>
+<div class="caso-meta">Henrique Dubugras &amp; Pedro Franceschi</div>
+</div>
+<span class="caso-tag">Serviços</span>
+</div>
+<p class="caso-descricao">Resolveram um problema vivido na prática em meios de pagamento e escalaram no Vale do Silício com cartão corporativo e stack financeiro.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Problema real antes da solução.</li>
+<li>Ambição global desde o início.</li>
+<li>Iteração rápida com clientes B2B.</li>
+<li>Aprendizado contínuo.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="digital servicos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/CUd1acI5w3A"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Bilionários Mais Jovens</h3>
+<div class="caso-meta">Jovens Brasileiros</div>
+</div>
+<span class="caso-tag">Digital</span>
+</div>
+<p class="caso-descricao">História extraordinária de dois jovens brasileiros que se tornaram os bilionários mais jovens do Brasil através de inovação e empreendedorismo tecnológico.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Inovação disruptiva gera valor exponencial.</li>
+<li>Tecnologia como alavanca de crescimento.</li>
+<li>Visão global desde o início.</li>
+<li>Execução impecável de ideias.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="servicos">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/Cq_OBKFS-as"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Paola Carosella</h3>
+<div class="caso-meta">Chef e Empresária • São Paulo</div>
+</div>
+<span class="caso-tag">Serviços</span>
+</div>
+<p class="caso-descricao">Recomeço em novo país, aprendizado na base e crescimento sustentado. Combinação de ofício, gestão e marca pessoal na gastronomia brasileira.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Começar pela operação ensina a gerir.</li>
+<li>Excelência e padrão de serviço.</li>
+<li>Branding do chef como ativo.</li>
+<li>Disciplina e longo prazo.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="social">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/EF3pT3rZv2k"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Favela Holding</h3>
+<div class="caso-meta">Celso Athayde</div>
+</div>
+<span class="caso-tag">Social</span>
+</div>
+<p class="caso-descricao">Ecossistema que conecta e fortalece empreendedores de territórios populares, mostrando o potencial econômico e social desses mercados.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Mercado subestimado é oportunidade.</li>
+<li>Rede e coalizões aumentam alcance.</li>
+<li>Negócio com impacto e lucro.</li>
+<li>Representatividade estratégica.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="social">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/aJV7AWmDt78"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Favela S.A: Jovens Empreendedores</h3>
+<div class="caso-meta">RecordTV Minas • Brasil</div>
+</div>
+<span class="caso-tag">Social</span>
+</div>
+<p class="caso-descricao">Histórias inspiradoras de jovens empreendedores que estão transformando vidas e gerando renda nas comunidades, mostrando o potencial econômico e social das favelas.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Inovação e resiliência na comunidade.</li>
+<li>Impacto social e geração de renda.</li>
+<li>Valorização do potencial local.</li>
+<li>Construção de redes de apoio.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="social">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/UzNjVB36S0M"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Edu Lyra: Jovens Empreendedores e Educação</h3>
+<div class="caso-meta">Gerando Falcões • Brasil</div>
+</div>
+<span class="caso-tag">Social</span>
+</div>
+<p class="caso-descricao">Edu Lyra, fundador da Gerando Falcões, discute como o empreendedorismo jovem e a educação são ferramentas essenciais para a transformação e cura das favelas brasileiras.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Inovação e resiliência na comunidade.</li>
+<li>Impacto social e geração de renda.</li>
+<li>Valorização do potencial local.</li>
+<li>Construção de redes de apoio.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="social">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/SVUEZYjjyjg"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Raull Santiago: Empreendedorismo Social na Favela</h3>
+<div class="caso-meta">Coletivo Papo Reto • Brasil</div>
+</div>
+<span class="caso-tag">Social</span>
+</div>
+<p class="caso-descricao">Raull Santiago e Ana Buchaim abordam o empreendedorismo social como uma poderosa ferramenta de transformação nas favelas e periferias, destacando iniciativas e desafios.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Inovação e resiliência na comunidade.</li>
+<li>Impacto social e geração de renda.</li>
+<li>Valorização do potencial local.</li>
+<li>Construção de redes de apoio.</li>
+</ul>
+</div>
+</div>
+</article><article class="caso-card" data-categorias="social">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/A4F03X59QuI"></iframe>
+</div>
+<div class="caso-content">
+<div class="caso-header">
+<div class="caso-info">
+<h3>Juliana Morais: Favela, a Potência que Você Não Vê</h3>
+<div class="caso-meta">Empreendedora Social • Brasil</div>
+</div>
+<span class="caso-tag">Social</span>
+</div>
+<p class="caso-descricao">Juliana Morais revela o empreendedorismo vibrante e a capacidade de inovação presentes nas favelas, mostrando como a criatividade e a resiliência geram novas oportunidades de vida.</p>
+<div class="licoes">
+<h4>Principais lições</h4>
+<ul>
+<li>Inovação e resiliência na comunidade.</li>
+<li>Impacto social e geração de renda.</li>
+<li>Valorização do potencial local.</li>
+<li>Construção de redes de apoio.</li>
+</ul>
+</div>
+</div>
+</article></section>
+<section class="cta-section">
+<h2>Pronto para escrever sua história?</h2>
+<p>Quem começa com foco e constância avança. Dê o primeiro passo hoje.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="#contato">Participar do Seminário</a>
+<a class="btn btn-secondary" href="#materiais">Acessar Materiais Gratuitos</a>
+</div>
+</section>
+</div>
+<script>
+    const btns = document.querySelectorAll('.filtro-btn');
+    const cards = document.querySelectorAll('.caso-card');
+
+    function filtrarCategoria(categoria) {
+      cards.forEach(card => {
+        const categorias = card.getAttribute('data-categorias').split(' ');
+        if (categoria === 'todos' || categorias.includes(categoria)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const categoria = btn.getAttribute('data-categoria');
+        filtrarCategoria(categoria);
+      });
+    });
+
+    filtrarCategoria('todos');
+  </script>
+</body>
+</html>
